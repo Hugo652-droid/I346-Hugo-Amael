@@ -10,15 +10,14 @@
   ```
   aws configure
   ```
+  * Puis il faut entré les données selon les credentials
 * [Gestion des profiles](https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html#cli-configure-files-format-profile)
   * Vous devez créer un profile du nom de votre équipe et l'utiliser pour toute les futures commandes
-  ```
-  aws s3 <la commande> --profile devopsteam<xx>
-  ```
+  * Pour cela nous avons changé directement dans le fichier ```User/.aws/credentials```
 
 ## IAM Policy
 
-Voici la "policy" qui vous a été attribuée:
+Voici la "policy" qui vous a été attribuée ( déja créer par le prof ) :
 
 ```json
 {
@@ -89,28 +88,38 @@ make_bucket: devopsteam99-i346
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Upload file](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-copy)
 
-* [Vérifier l'état du bucket avant votre commande]
+* Après la vérification de des buckets j'ai uploader un fichier text test.txt
 
 ```bash
-//TODO
+aws s3 ls --profile DEVOPSTEAM05 | grep "devopsteam*"
 ```
 
 ```
 [OUTPUT]
-//TODO
+2025-01-27 22:23:30 devopsteam01-i346
+2025-01-27 22:28:03 devopsteam02-i346
+2025-01-27 22:28:05 devopsteam03-i346
+2025-01-27 22:28:06 devopsteam04-i346
+2025-01-27 22:28:08 devopsteam05-i346
+2025-01-27 22:28:09 devopsteam06-i346
+2025-01-27 22:28:11 devopsteam07-i346
+2025-01-27 22:28:13 devopsteam08-i346
+2025-01-27 22:28:14 devopsteam09-i346
+2025-01-27 22:28:16 devopsteam10-i346
+2025-02-03 19:32:33 devopsteam99-i346
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+aws s3 cp C:\test.txt s3://devopsteam05-i346/ --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+upload: C:\test.txt to s3://devopsteam05-i346/test.txt
 ```
 
 ### Uploader un répertoire
@@ -122,12 +131,12 @@ make_bucket: devopsteam99-i346
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+
 ```
 
 ```
 [OUTPUT]
-//TODO
+
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
