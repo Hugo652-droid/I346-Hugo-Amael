@@ -88,30 +88,31 @@ make_bucket: devopsteam99-i346
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Upload file](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-copy)
+* [AWS Official Doc - Upload file](https://docs.aws.amazon.com/cli/v1/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-copy)
+* [Comment recupairer un objet](https://www.geeksforgeeks.org/get-object-in-aws-s3-using-ui-cli/)
 
 * Après la vérification de des buckets j'ai uploader un fichier text test.txt
 
 ```bash
-aws s3 ls --profile DEVOPSTEAM05 | grep "devopsteam*"
+aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-2025-01-27 22:23:30 devopsteam01-i346
-2025-01-27 22:28:03 devopsteam02-i346
-2025-01-27 22:28:05 devopsteam03-i346
-2025-01-27 22:28:06 devopsteam04-i346
-2025-01-27 22:28:08 devopsteam05-i346
-2025-01-27 22:28:09 devopsteam06-i346
-2025-01-27 22:28:11 devopsteam07-i346
-2025-01-27 22:28:13 devopsteam08-i346
-2025-01-27 22:28:14 devopsteam09-i346
-2025-01-27 22:28:16 devopsteam10-i346
-2025-02-03 19:32:33 devopsteam99-i346
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-05T10:38:04+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "text/plain",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
-* [La commande à réaliser pour effecuter l'action demandée]
+* ajout d'un fichier dans un bucket  
 
 ```bash
 aws s3 cp C:\test.txt s3://devopsteam05-i346/ --profile DEVOPSTEAM05
@@ -126,7 +127,7 @@ upload: C:\test.txt to s3://devopsteam05-i346/test.txt
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Create Bucket](https://docs.aws.amazon.com/fr_fr/cli/v1/userguide/cli_s3_code_examples.html)
 
 * [Vérifier l'état du bucket avant votre commande]
 
@@ -139,15 +140,15 @@ upload: C:\test.txt to s3://devopsteam05-i346/test.txt
 
 ```
 
-* [La commande à réaliser pour effecuter l'action demandée]
+* J'utilise l'opption recurisve pour ajouter le dossier dans le bucket
 
 ```bash
-//TODO
+ aws s3 cp --recursive C:\test_aws s3://devopsteam05-i346/ --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+upload: C:\test_aws\test.txt to s3://devopsteam05-i346/test.txt
 ```
 
 ### Lister le contenu d'un "repertoire"
