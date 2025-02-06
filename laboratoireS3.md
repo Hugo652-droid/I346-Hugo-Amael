@@ -54,7 +54,7 @@ Attention:
 * Le bucket existe-t-il ?
 
 ```bash
-aws s3 ls --profile devopsteam99-i346 | grep "devopsteam*"
+aws s3 ls --profile DEVOPSTEAM05 | grep "devopsteam*"
 ```
 
 ```
