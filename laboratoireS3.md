@@ -398,28 +398,28 @@ An error occurred (AccessDenied) when calling the GetObject operation: User: arn
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Vider Bucket](https://docs.aws.amazon.com/cli/latest/reference/s3api/delete-object.html#examples)
 
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3api get-object --bucket devopsteam05-i346 --key test_aws test_aws --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+aws s3api delete-object --bucket devopsteam05-i346 --profile DEVOPSTEAM05 --key .
 ```
 
+* il n'y a pas de retour dans la console donc j'ai refait un êtat du bucket
 ```
 [OUTPUT]
-//TODO
+
 ```
 
 ---
