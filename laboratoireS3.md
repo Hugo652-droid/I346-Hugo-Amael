@@ -280,7 +280,7 @@ aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --pro
 
 ```
 [OUTPUT]
-https://devopsteam05-i346.s3.amazonaws.com/test.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KFJKL4ORBNOOB4J%2F20250211%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250211T124526Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=cbe47509a7bdae703052cef3c6fff56cfd23a556e018b0a3609e52009083f822
+https://devopsteam05-i346.s3.amazonaws.com/test.txt
 ```
 
 ### Supprimer un fichier
