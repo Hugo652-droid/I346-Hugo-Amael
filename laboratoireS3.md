@@ -211,28 +211,39 @@ upload: C:\test_aws\test.txt to s3://devopsteam05-i346/test.txt
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Publier un objet en URL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html)
 
 * [Vérifier l'état du bucket avant votre commande]
+* Après la vérification de des buckets j'ai uploader un fichier text test.txt
 
 ```bash
-//TODO
+aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-05T10:38:04+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "text/plain",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+ aws s3 presign s3://devopsteam05-i346/test.txt --expires-in 604800 --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+https://devopsteam05-i346.s3.amazonaws.com/test.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KFJKL4ORBNOOB4J%2F20250211%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250211T124526Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=cbe47509a7bdae703052cef3c6fff56cfd23a556e018b0a3609e52009083f822
 ```
 
 ### Supprimer un fichier
