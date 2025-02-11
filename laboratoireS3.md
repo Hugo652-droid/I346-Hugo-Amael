@@ -375,23 +375,41 @@ An error occurred (AccessDenied) when calling the GetObject operation: User: arn
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-05T10:38:04+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "text/plain",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+aws s3api head-object --bucket devopsteam05-i346 --key test.txt --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-11T13:48:05+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ContentType": "text/plain",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
 ### Vider le bucket
