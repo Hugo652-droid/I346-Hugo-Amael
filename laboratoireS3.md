@@ -127,63 +127,98 @@ upload: C:\test.txt to s3://devopsteam05-i346/test.txt
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://docs.aws.amazon.com/fr_fr/cli/v1/userguide/cli_s3_code_examples.html)
+* [AWS Official Doc - Upload un repertoir](https://awscli.amazonaws.com/v2/documentation/api/2.0.34/reference/s3api/put-object.html#examples)
 
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-
+aws s3api get-object --bucket devopsteam05-i346 --key upladRepertoir test_aws --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-11T12:48:31+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "binary/octet-stream",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
-* J'utilise l'opption recurisve pour ajouter le dossier dans le bucket
+* Nous avons utiliser la comande put-object pour créer un répertoir
 
 ```bash
- aws s3 cp --recursive C:\test_aws s3://devopsteam05-i346/ --profile DEVOPSTEAM05
+aws s3api put-object --bucket devopsteam05-i346 --key upladRepertoir --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-upload: C:\test_aws\test.txt to s3://devopsteam05-i346/test.txt
+{
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ServerSideEncryption": "AES256"
+}
 ```
 
 ### Lister le contenu d'un "repertoire"
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Upload un repertoir](https://awscli.amazonaws.com/v2/documentation/api/2.0.34/reference/s3api/put-object.html#examples)
 
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-//TODO
+aws s3api get-object --bucket devopsteam05-i346 --key upladRepertoir test_aws --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-11T12:48:31+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "binary/octet-stream",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
-* [La commande à réaliser pour effecuter l'action demandée]
+* pour lister ce qui a dans le repertoir j'ai utiliser la meme comande que pour verifier l'état du répertoir
 
 ```bash
-//TODO
+aws s3api get-object --bucket devopsteam05-i346 --key upladRepertoir test_aws --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-11T12:48:31+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "binary/octet-stream",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
 ### Synchroniser un répertoire local de sa machine avec un bucket
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Syncroniser un repertoire ](https://docs.outscale.com/fr/userguide/Synchroniser-des-objets-dans-un-bucket.html)
 
 * [Vérifier l'état du bucket avant votre commande]
 
@@ -199,13 +234,15 @@ upload: C:\test_aws\test.txt to s3://devopsteam05-i346/test.txt
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+aws s3 sync C:/test_aws/ s3://devopsteam05-i346/uploadRepertoir --profile DEVOPSTEAM05
 ```
 
+* Cette comande ne marche pas car nous n'avons pas les droit donc il n'y a pas de retour. Mais 
 ```
 [OUTPUT]
-//TODO
+
 ```
+
 
 ### Publier un fichier présent sur un bucket en générant un lien (url) temporaire
 
