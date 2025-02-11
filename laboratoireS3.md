@@ -460,4 +460,4 @@ Car il risque de detruir les fichiers à l'inteur du bucket à tout jamais et le
 
 ### Reprenez l'IAM "Policy" et expliquer ce que vous pouvez en déduire au niveau des droits qui vous sont alloués
 
-Consigne : Reprenez la "policy" et documenter chaque ligne
+Nous avons accés aux commandes comme Get-object, Delet-object et Put-object
