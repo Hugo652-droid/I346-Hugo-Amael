@@ -327,28 +327,43 @@ An error occurred (AccessDenied) when calling the GetObject operation: User: arn
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Create Bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/mb.html#examples)
+* [AWS Official Doc - Delete object](https://awscli.amazonaws.com/v2/documentation/api/2.0.34/reference/s3api/delete-object.html)
 
 * [Vérifier l'état du bucket avant votre commande]
 
+
 ```bash
-//TODO
+aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-05T10:38:04+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "text/plain",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-//TODO
+aws s3api delete-object --bucket devopsteam05-i346 --key uploadRepertoir --profile DEVOPSTEAM05
 ```
 
+Pas d'output dans la commande précédente, réalisation d'une commande de test qui est la suivante
 ```
 [OUTPUT]
-//TODO
+aws s3api get-object --bucket devopsteam05-i346 --key uploadRepertoir C:\test_aws --profile DEVOPSTEAM05
+
+An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam05-i346" because no identity-based policy allows the s3:ListBucket action
+
 ```
 
 ### Extraire uniquement les metadonnées d'un objet
