@@ -360,7 +360,7 @@ aws s3api delete-object --bucket devopsteam05-i346 --key uploadRepertoir --profi
 Pas d'output dans la commande précédente, réalisation d'une commande de test qui est la suivante
 ```
 [OUTPUT]
-aws s3api get-object --bucket devopsteam05-i346 --key uploadRepertoir C:\test_aws --profile DEVOPSTEAM05
+aws s3api get-object --bucket devopsteam05-i346 --key uploadRepertoir test_aws --profile DEVOPSTEAM05
 
 An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam05-i346" because no identity-based policy allows the s3:ListBucket action
 
