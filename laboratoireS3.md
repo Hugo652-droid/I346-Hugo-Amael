@@ -88,7 +88,7 @@ make_bucket: devopsteam99-i346
 
 //TODO en suivant le modèle livré sous "Créer un bucket"
 
-* [AWS Official Doc - Upload file](https://docs.aws.amazon.com/cli/v1/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-copy)
+* [AWS Official Doc - Upload file]([https://docs.aws.amazon.com/cli/v1/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-copy](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/cp.html))
 * [Comment recupairer un objet](https://www.geeksforgeeks.org/get-object-in-aws-s3-using-ui-cli/)
 
 * Après la vérification de des buckets j'ai uploader un fichier text test.txt
