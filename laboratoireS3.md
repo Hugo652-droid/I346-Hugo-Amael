@@ -94,22 +94,15 @@ make_bucket: devopsteam99-i346
 * Après la vérification de des buckets j'ai uploader un fichier text test.txt
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
+aws s3 ls s3://devopsteam05-i346 \
+--profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-{
-    "AcceptRanges": "bytes",
-    "LastModified": "2025-02-05T10:38:04+00:00",
-    "ContentLength": 0,
-    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
-    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
-    "ChecksumType": "FULL_OBJECT",
-    "ContentType": "text/plain",
-    "ServerSideEncryption": "AES256",
-    "Metadata": {}
-}
+2025-02-12 11:07:18          0 test.txt
+2025-02-11 14:32:28          0 test_aws
+2025-02-12 11:19:47          0 upladRepertoir
 ```
 
 * ajout d'un fichier dans un bucket  
