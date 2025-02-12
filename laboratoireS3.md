@@ -17,7 +17,7 @@
 
 ## IAM Policy
 
-Voici la "policy" qui vous a été attribuée ( déja créer par le prof ) :
+Voici la "policy" qui vous a été attribuée ( déja créée par le prof ) :
 
 ```json
 {
@@ -130,7 +130,7 @@ upload: C:\test.txt to s3://devopsteam05-i346/test.txt
 
 * [AWS Official Doc - Upload un repertoir](https://awscli.amazonaws.com/v2/documentation/api/2.0.34/reference/s3api/put-object.html#examples)
 
-* [Vérifier l'état du bucket avant votre commande]
+* Vérification de l'état du répertoir "upladRepertoir" qu'on met dans le répertoir "test_aws"
 
 ```bash
 aws s3api get-object \
@@ -187,10 +187,13 @@ aws s3 cp \
 
 * [AWS Official Doc - Upload un repertoir](https://awscli.amazonaws.com/v2/documentation/api/2.0.34/reference/s3api/put-object.html#examples)
 
-* [Vérifier l'état du bucket avant votre commande]
+* Vérification de l'état du répertoir "upladRepertoir" qu'on met dans le répertoir "test_aws"
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key upladRepertoir test_aws --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key upladRepertoir test_aws \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -208,10 +211,13 @@ aws s3api get-object --bucket devopsteam05-i346 --key upladRepertoir test_aws --
 }
 ```
 
-* pour lister ce qui a dans le repertoir j'ai utiliser la meme comande que pour verifier l'état du répertoir
+* pour lister ce qui a dans le repertoir j'ai utiliser la meme commande que pour verifier l'état du répertoir
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key upladRepertoir test_aws --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key upladRepertoir test_aws \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -235,21 +241,35 @@ aws s3api get-object --bucket devopsteam05-i346 --key upladRepertoir test_aws --
 
 * [AWS Official Doc - Syncroniser un repertoire ](https://docs.outscale.com/fr/userguide/Synchroniser-des-objets-dans-un-bucket.html)
 
-* [Vérifier l'état du bucket avant votre commande]
-
+* Vérification de l'état du répertoir "upladRepertoir" qu'on met dans le répertoir "test_aws"
+  
 ```bash
-//TODO
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key upladRepertoir test_aws \
+--profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-//TODO
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-02-11T12:48:31+00:00",
+    "ContentLength": 0,
+    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
+    "ChecksumType": "FULL_OBJECT",
+    "ContentType": "binary/octet-stream",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
 ```
 
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3 sync C:/test_aws/ s3://devopsteam05-i346/uploadRepertoir --profile DEVOPSTEAM05
+aws s3 sync C:/test_aws/ s3://devopsteam05-i346/uploadRepertoir \
+--profile DEVOPSTEAM05
 ```
 
 * Cette comande ne marche pas car nous n'avons pas les droit donc il n'y a pas de retour. Mais 
@@ -269,7 +289,10 @@ aws s3 sync C:/test_aws/ s3://devopsteam05-i346/uploadRepertoir --profile DEVOPS
 * Après la vérification de des buckets j'ai uploader un fichier text test.txt
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key test.txt C:\test.txt \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -290,7 +313,9 @@ aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --pro
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
- aws s3 presign s3://devopsteam05-i346/test.txt --expires-in 604800 --profile DEVOPSTEAM05
+ aws s3 presign s3://devopsteam05-i346/test.txt \
+--expires-in 604800 \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -307,7 +332,10 @@ https://devopsteam05-i346.s3.amazonaws.com/test.txt
 * Verification de l'état du bucket avant l'execution de la commande
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key test.txt C:\test.txt \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -328,12 +356,18 @@ aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --pro
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3api delete-object --bucket devopsteam05-i346 --key test.txt --profile DEVOPSTEAM05
+aws s3api delete-object \
+--bucket devopsteam05-i346 \
+--key test.txt \
+--profile DEVOPSTEAM05
 ```
 Aucun output à la commande, donc une nouvelle commande pour verifier l'absence du fichiers à été entrée (elle avait un output qui est le suivant).
 ```
 [OUTPUT]
-$ aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
+$ aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key test.txt C:\test.txt \
+--profile DEVOPSTEAM05
 
 An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam05-i346" because no identity-based policy allows the s3:ListBucket action
 ```
@@ -348,7 +382,10 @@ An error occurred (AccessDenied) when calling the GetObject operation: User: arn
 
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key test.txt C:\test.txt \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -369,13 +406,19 @@ aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --pro
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3api delete-object --bucket devopsteam05-i346 --key uploadRepertoir --profile DEVOPSTEAM05
+aws s3api delete-object \
+--bucket devopsteam05-i346 \
+--key uploadRepertoir \
+--profile DEVOPSTEAM05
 ```
 
 Pas d'output dans la commande précédente, réalisation d'une commande de test qui est la suivante
 ```
 [OUTPUT]
-aws s3api get-object --bucket devopsteam05-i346 --key uploadRepertoir test_aws --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key uploadRepertoir test_aws \
+--profile DEVOPSTEAM05
 
 An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam05-i346" because no identity-based policy allows the s3:ListBucket action
 
@@ -390,7 +433,10 @@ An error occurred (AccessDenied) when calling the GetObject operation: User: arn
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key test.txt C:\test.txt \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -411,7 +457,10 @@ aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --pro
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3api head-object --bucket devopsteam05-i346 --key test.txt --profile DEVOPSTEAM05
+aws s3api head-object \
+--bucket devopsteam05-i346 \
+--key test.txt \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -436,7 +485,10 @@ aws s3api head-object --bucket devopsteam05-i346 --key test.txt --profile DEVOPS
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key test_aws test_aws --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key test_aws test_aws \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -446,7 +498,10 @@ aws s3api get-object --bucket devopsteam05-i346 --key test_aws test_aws --profil
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3api delete-object --bucket devopsteam05-i346 --profile DEVOPSTEAM05 --key .
+aws s3api delete-object \
+--bucket devopsteam05-i346 \
+--profile DEVOPSTEAM05 \
+--key .
 ```
 
 * il n'y a pas de retour dans la console donc j'ai refait un êtat du bucket
