@@ -157,7 +157,10 @@ aws s3api get-object \
 * Nous avons utiliser la comande put-object pour créer un répertoir
 
 ```bash
-aws s3api put-object --bucket devopsteam05-i346 --key upladRepertoir --profile DEVOPSTEAM05
+aws s3api put-object \
+--bucket devopsteam05-i346 \
+--key upladRepertoir \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -168,6 +171,14 @@ aws s3api put-object --bucket devopsteam05-i346 --key upladRepertoir --profile D
     "ChecksumType": "FULL_OBJECT",
     "ServerSideEncryption": "AES256"
 }
+```
+
+* autre possibiliter
+
+```bash
+aws s3 cp \
+--recursive ./test_aws s3://devopsteam05-i346 \
+--profile DEVOPSTEAM05
 ```
 
 ### Lister le contenu d'un "repertoire"
