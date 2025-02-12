@@ -115,7 +115,8 @@ aws s3api get-object --bucket devopsteam05-i346 --key test.txt C:\test.txt --pro
 * ajout d'un fichier dans un bucket  
 
 ```bash
-aws s3 cp C:\test.txt s3://devopsteam05-i346/ --profile DEVOPSTEAM05
+aws s3 cp C:\test.txt s3://devopsteam05-i346/ \
+--profile DEVOPSTEAM05
 ```
 
 ```
@@ -132,7 +133,10 @@ upload: C:\test.txt to s3://devopsteam05-i346/test.txt
 * [Vérifier l'état du bucket avant votre commande]
 
 ```bash
-aws s3api get-object --bucket devopsteam05-i346 --key upladRepertoir test_aws --profile DEVOPSTEAM05
+aws s3api get-object \
+--bucket devopsteam05-i346 \
+--key upladRepertoir test_aws \
+--profile DEVOPSTEAM05
 ```
 
 ```
