@@ -1,0 +1,26 @@
+cloud-architecture-diagram
+
+// Define groups and nodes
+API gateway [icon: aws-api-gateway]
+S3 [icon: aws-simple-storage-service]
+
+VPC_SI-CMI2b [icon: aws-vpc] {
+  Main Server {
+    SSH_SRV [icon: aws-ec2]
+    Data [icon: aws-rds]
+  }
+
+  Route_Table [icon: aws-route-table]
+
+  Subnet_Devopsteam05 [color: red] {
+    Cli_WIN [icon: aws-ec2]
+    Cli_LIN [icon: aws-ec2]
+  }
+}
+
+
+// Define connections
+API gateway > SSH_SRV > Data
+SSH_SRV > Route_Table
+Route_Table > Cli_WIN, Cli_LIN
+S3 < Data
