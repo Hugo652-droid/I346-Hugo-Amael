@@ -150,20 +150,14 @@ aws s3api get-object \
 * Nous avons utiliser la comande put-object pour créer un répertoir
 
 ```bash
-aws s3api put-object \
---bucket devopsteam05-i346 \
---key upladRepertoir \
+aws s3 cp Amael s3://devopsteam05-i346/Amael \
+--recursive \
 --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-{
-    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
-    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
-    "ChecksumType": "FULL_OBJECT",
-    "ServerSideEncryption": "AES256"
-}
+upload: Amael\Hugo.txt to s3://devopsteam05-i346/Amael/Hugo.txt
 ```
 
 * autre possibiliter
@@ -207,25 +201,18 @@ aws s3api get-object \
 * pour lister ce qui a dans le repertoir j'ai utiliser la meme commande que pour verifier l'état du répertoir
 
 ```bash
-aws s3api get-object \
---bucket devopsteam05-i346 \
---key upladRepertoir test_aws \
+aws s3 ls s3://devopsteam05-i346 \
+--recursive \
 --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-{
-    "AcceptRanges": "bytes",
-    "LastModified": "2025-02-11T12:48:31+00:00",
-    "ContentLength": 0,
-    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
-    "ChecksumCRC64NVME": "AAAAAAAAAAA=",
-    "ChecksumType": "FULL_OBJECT",
-    "ContentType": "binary/octet-stream",
-    "ServerSideEncryption": "AES256",
-    "Metadata": {}
-}
+2025-02-25 13:40:41         13 Amael/Hugo.txt
+2025-02-25 13:35:27         21 demo.txt
+2025-02-12 11:07:18          0 test.txt
+2025-02-11 14:32:28          0 test_aws
+2025-02-12 12:25:43         21 upladRepertoir
 ```
 
 ### Synchroniser un répertoire local de sa machine avec un bucket
@@ -261,14 +248,14 @@ aws s3api get-object \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3 sync C:/test_aws/ s3://devopsteam05-i346/uploadRepertoir \
+aws s3 sync Amael s3://devopsteam05-i346/Amael \
 --profile DEVOPSTEAM05
 ```
 
 * Cette comande ne marche pas car nous n'avons pas les droit donc il n'y a pas de retour. Mais 
 ```
 [OUTPUT]
-
+upload: Amael\Hugo.txt to s3://devopsteam05-i346/Amael/Hugo.txt
 ```
 
 
@@ -306,14 +293,15 @@ aws s3api get-object \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
- aws s3 presign s3://devopsteam05-i346/test.txt \
---expires-in 604800 \
+aws s3 presign s3://devopsteam05-i346/Amael/Hugo.txt \
+--expires-in 60 \
+--region eu-central-1 \
 --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
-https://devopsteam05-i346.s3.amazonaws.com/test.txt
+[https://devopsteam05-i346.s3.amazonaws.com/test.txt](https://devopsteam05-i346.s3.eu-central-1.amazonaws.com/Amael/Hugo.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KFJKL4ORBNOOB4J%2F20250225%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250225T124726Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=1332b50915efc0badf3a7d8c1c1b4d2cf04a8ca7de882362228e74061a6d164e)
 ```
 
 ### Supprimer un fichier
@@ -349,20 +337,13 @@ aws s3api get-object \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3api delete-object \
---bucket devopsteam05-i346 \
---key test.txt \
+aws s3 rm s3://devopsteam05-i346/demo.txt \
 --profile DEVOPSTEAM05
 ```
 Aucun output à la commande, donc une nouvelle commande pour verifier l'absence du fichiers à été entrée (elle avait un output qui est le suivant).
 ```
 [OUTPUT]
-$ aws s3api get-object \
---bucket devopsteam05-i346 \
---key test.txt C:\test.txt \
---profile DEVOPSTEAM05
-
-An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam05-i346" because no identity-based policy allows the s3:ListBucket action
+delete: s3://devopsteam05-i346/demo.txt
 ```
 
 ### Vider un "repertoire"
@@ -399,21 +380,15 @@ aws s3api get-object \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3api delete-object \
---bucket devopsteam05-i346 \
---key uploadRepertoir \
+aws s3 rm s3://devopsteam05-i346/Amael \
+--recursive \
 --profile DEVOPSTEAM05
 ```
 
 Pas d'output dans la commande précédente, réalisation d'une commande de test qui est la suivante
 ```
 [OUTPUT]
-aws s3api get-object \
---bucket devopsteam05-i346 \
---key uploadRepertoir test_aws \
---profile DEVOPSTEAM05
-
-An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: s3:ListBucket on resource: "arn:aws:s3:::devopsteam05-i346" because no identity-based policy allows the s3:ListBucket action
+delete: s3://devopsteam05-i346/Amael/Hugo.txt
 
 ```
 
@@ -450,22 +425,18 @@ aws s3api get-object \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3api head-object \
+aws s3api get-object-attributes \
 --bucket devopsteam05-i346 \
---key test.txt \
+--key Amael/Hugo.txt \
+--object-attributes ObjectSize \
 --profile DEVOPSTEAM05
 ```
 
 ```
 [OUTPUT]
 {
-    "AcceptRanges": "bytes",
-    "LastModified": "2025-02-11T13:48:05+00:00",
-    "ContentLength": 0,
-    "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
-    "ContentType": "text/plain",
-    "ServerSideEncryption": "AES256",
-    "Metadata": {}
+    "LastModified": "2025-02-25T12:50:16+00:00",
+    "ObjectSize": 15
 }
 ```
 
@@ -491,15 +462,17 @@ aws s3api get-object \
 * [La commande à réaliser pour effecuter l'action demandée]
 
 ```bash
-aws s3api delete-object \
---bucket devopsteam05-i346 \
---profile DEVOPSTEAM05 \
---key .
+aws s3 rm s3://devopsteam05-i346/ \
+--recursive \
+--profile DEVOPSTEAM05
 ```
 
 * il n'y a pas de retour dans la console donc j'ai refait un êtat du bucket
 ```
-[OUTPUT]
+delete: s3://devopsteam05-i346/upladRepertoir
+delete: s3://devopsteam05-i346/Amael/Hugo.txt
+delete: s3://devopsteam05-i346/test.txt
+delete: s3://devopsteam05-i346/test_aws
 
 ```
 
