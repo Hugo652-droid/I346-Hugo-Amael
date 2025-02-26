@@ -24,4 +24,4 @@ VPC_SI-CMI2b [icon: aws-vpc] {
 Internet > IGW > SSH_SRV 
 SSH_SRV > Route_Table
 Route_Table > Cli_WIN, Cli_LIN
-Route_Table > NAT > IGW > Internet 
+Route_Table > NAT > IGW 
