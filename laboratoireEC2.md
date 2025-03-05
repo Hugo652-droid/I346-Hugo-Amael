@@ -135,7 +135,7 @@ Output:
 
 ## Gestion de la table de routage
 
-### Créer la table
+### Créer la table de routage
 
 - [Documentation AWS - Créer une table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-route-table.html)
 
@@ -174,7 +174,7 @@ Output de l'interface grafique :
 
 ![image](<Image/Capture d'ecrant IG AWS ec2 creat route table .png>)
 
-### Supprimer la table
+### Supprimer la table de routage
 
 - [Documentation AWS - supprimer une table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-route-table.html)
 
@@ -193,6 +193,50 @@ Aucun output
 Output de l'interface grafique :
 
 ![image](<Image/Capture_decrant_IG_AWS_ec2_delete_route_table .png>)
+
+### Afficher la table de routage
+
+- [Documentation AWS - afficher une table de routage](https://awscli.amazonaws.com/v2/documentation/api/2.0.33/reference/ec2/describe-route-tables.html)
+
+Afficher une table de routage :
+```
+aws ec2 describe-route-tables \
+    --profile DEVOPSTEAM05 \
+    --region eu-central-1 \
+    --route-table-ids rtb-09eea99d8ac647a5f \
+    --output table
+```
+
+Output du CLI :
+```
+---------------------------------------------------------------
+|                     DescribeRouteTables                     |
++-------------------------------------------------------------+
+||                        RouteTables                        ||
+|+----------------------+------------------------------------+|
+||  OwnerId             |  709024702237                      ||
+||  RouteTableId        |  rtb-09eea99d8ac647a5f             ||
+||  VpcId               |  vpc-0a22d771f16ae549d             ||
+|+----------------------+------------------------------------+|
+|||                      Associations                       |||
+||+--------------------------+------------------------------+||
+|||  Main                    |  False                       |||
+|||  RouteTableAssociationId |  rtbassoc-067eb31bcc2d1a3cc  |||
+|||  RouteTableId            |  rtb-09eea99d8ac647a5f       |||
+|||  SubnetId                |  subnet-092ced6aa04603165    |||
+||+--------------------------+------------------------------+||
+||||                   AssociationState                    ||||
+|||+--------------------+----------------------------------+|||
+||||  State             |  associated                      ||||
+|||+--------------------+----------------------------------+|||
+|||                         Routes                          |||
+||+------------------------------+--------------------------+||
+|||  DestinationCidrBlock        |  10.0.0.0/16             |||
+|||  GatewayId                   |  local                   |||
+|||  Origin                      |  CreateRouteTable        |||
+|||  State                       |  active                  |||
+||+------------------------------+--------------------------+||
+```
 
 ### Associer la table
 
