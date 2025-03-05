@@ -7,7 +7,7 @@ VPC > Your VPCs > vpc-0a22d771f16ae549d
 
 ### Depuis le CLI
 
-- [Documentation AWS](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html)
+- [Documentation AWS - Describe VPCs](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html)
 
 Lister les VPC, ec2: Logiciel de virtualisation, region: eu-central-1 et output (sortie sous forme de tableau)
 ```
@@ -53,14 +53,84 @@ Outupt:
 
 ## Lister les sous-réseaux
 
+### Depuis le site web aws
+
+Lister les subnets :
+
+VPC > Your VPCs > vpc-0a22d771f16ae549d > Subnets
+
+![image](https://github.com/user-attachments/assets/ee1f4c56-797d-46f0-bff0-d08fe89d7d18)
+
+Lister UN subnet en particulier :
+
+VPC > Your VPCs > vpc-0a22d771f16ae549d > Subnets > subnet-092ced6aa04603165 / subnet-10.0.5.0/28
+
+![image](https://github.com/user-attachments/assets/7ec81e66-9ef2-417e-9b81-86e5ff0255c8)
+
+### Depuis le CLI
+
+- [AWS Documentation - Describe subnets](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-subnets.html)
+
 Lister les subnets:
 ```
-aws ec2 describe-subnets --region eu-central-1 --profile DEVOPSTEAM05 --output table
+aws ec2 describe-subnets\
+ --region eu-central-1\
+ --profile DEVOPSTEAM05 --output table
 ```
 Output:
+```
 Tableau de tout les sous-réseaux
+```
 
-Lister UN sous-réseau en particulier:
+Lister UN subnet en particulier:
+```
+$ aws ec2 describe-subnets \
+--filters "Name=subnet-id,Values=subnet-092ced6aa04603165" \
+--region eu-central-1 \
+--profile DEVOPSTEAM05 \
+--output table
+```
+
+Output:
+```
+------------------------------------------------------------------------------------------------------------
+|                                              DescribeSubnets                                             |
++----------------------------------------------------------------------------------------------------------+
+||                                                 Subnets                                                ||
+|+------------------------------+-------------------------------------------------------------------------+|
+||  AssignIpv6AddressOnCreation |  False                                                                  ||
+||  AvailabilityZone            |  eu-central-1c                                                          ||
+||  AvailabilityZoneId          |  euc1-az1                                                               ||
+||  AvailableIpAddressCount     |  11                                                                     ||
+||  CidrBlock                   |  10.0.5.0/28                                                            ||
+||  DefaultForAz                |  False                                                                  ||
+||  EnableDns64                 |  False                                                                  ||
+||  Ipv6Native                  |  False                                                                  ||
+||  MapCustomerOwnedIpOnLaunch  |  False                                                                  ||
+||  MapPublicIpOnLaunch         |  False                                                                  ||
+||  OwnerId                     |  709024702237                                                           ||
+||  State                       |  available                                                              ||
+||  SubnetArn                   |  arn:aws:ec2:eu-central-1:709024702237:subnet/subnet-092ced6aa04603165  ||
+||  SubnetId                    |  subnet-092ced6aa04603165                                               ||
+||  VpcId                       |  vpc-0a22d771f16ae549d                                                  ||
+|+------------------------------+-------------------------------------------------------------------------+|
+|||                                        BlockPublicAccessStates                                       |||
+||+---------------------------------------------------------------------------------+--------------------+||
+|||  InternetGatewayBlockMode                                                       |  off               |||
+||+---------------------------------------------------------------------------------+--------------------+||
+|||                                     PrivateDnsNameOptionsOnLaunch                                    |||
+||+-----------------------------------------------------------------------------+------------------------+||
+|||  EnableResourceNameDnsAAAARecord                                            |  False                 |||
+|||  EnableResourceNameDnsARecord                                               |  False                 |||
+|||  HostnameType                                                               |  ip-name               |||
+||+-----------------------------------------------------------------------------+------------------------+||
+|||                                                 Tags                                                 |||
+||+----------------------------+-------------------------------------------------------------------------+||
+|||  Key                       |  Name                                                                   |||
+|||  Value                     |  subnet-10.0.5.0/28                                                     |||
+||+----------------------------+-------------------------------------------------------------------------+||
+
+```
 
 
 ## Créer la table de routage
