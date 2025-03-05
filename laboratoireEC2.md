@@ -179,7 +179,6 @@ aws ec2 delete-route-table \
 ```
 
 Output du CLI:
-``````
 
 Output de l'interface grafique :
 ![image](<Image/Capture_decrant_IG_AWS_ec2_delete_route_table .png>)
