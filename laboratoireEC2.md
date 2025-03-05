@@ -166,7 +166,7 @@ Output du CLI:
 ```
 
 Output de l'interface grafique :
-image/Capture%20d'ecrant%20IG%20AWS%20ec2%20creat%20route%20table%20.png
+![image](<Image/Capture d'ecrant IG AWS ec2 creat route table .png>)
 
 - [Documentation AWS supprimer une table de routage] (https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-route-table.html)
 
@@ -182,4 +182,4 @@ Output du CLI:
 ``````
 
 Output de l'interface grafique :
-image/Capture_decrant_IG_AWS_ec2_delete_route_table%20.png
+![image](<Image/Capture_decrant_IG_AWS_ec2_delete_route_table .png>)
