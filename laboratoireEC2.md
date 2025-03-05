@@ -6,6 +6,9 @@ VPC > Your VPCs > vpc-0a22d771f16ae549d
 ![image](https://github.com/user-attachments/assets/be4ccc05-0a4f-449c-a4db-3473511d1601)
 
 ### Depuis le CLI
+
+- [Documentation AWS](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html)
+
 Lister les VPC, ec2: Logiciel de virtualisation, region: eu-central-1 et output (sortie sous forme de tableau)
 ```
 aws ec2 describe-vpcs\
