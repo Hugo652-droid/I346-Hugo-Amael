@@ -272,4 +272,11 @@ Output depuis l'interface graphique :
 
 ![image](https://github.com/user-attachments/assets/49c474f9-b322-473b-99d5-160226c3753f)
 
+### Desassocier la table
+
+- [Documentation AWS - Desassocier la table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/disassociate-route-table.html)
+
+### Créer des routes
+- [Documentation AWS - Créer des routes](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-route.html)
+
 
