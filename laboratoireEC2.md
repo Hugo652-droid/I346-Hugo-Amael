@@ -135,11 +135,15 @@ Output:
 
 ## Créer la table de routage
 
-- [Documentation AWS Créer une table de routage] (https://docs.aws.amazon.com/cli/latest/reference/ec2/create-route-table.html)
+- [Documentation AWS - Créer une table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-route-table.html)
 
-Créer la table de routage :
+Créer la table de routage depuis le CLI :
 ```
- aws ec2 create-route-table --vpc-id vpc-0a22d771f16ae549d --profile DEVOPSTEAM05 --region eu-central-1
+ aws ec2 create-route-table\
+ --vpc-id vpc-0a22d771f16ae549d\
+ --profile DEVOPSTEAM05\
+ --region eu-central-1\
+--output table
 ```
 
 Output du CLI:
@@ -166,11 +170,12 @@ Output du CLI:
 ```
 
 Output de l'interface grafique :
+
 ![image](<Image/Capture d'ecrant IG AWS ec2 creat route table .png>)
 
-- [Documentation AWS supprimer une table de routage] (https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-route-table.html)
+- [Documentation AWS - supprimer une table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-route-table.html)
 
-Pour suprimmer la route table
+Suprimmer la route table depuis le CLI:
 ```
 aws ec2 delete-route-table \
 	--route-table-id rtb-028cd789bcaf18038 \
@@ -180,5 +185,8 @@ aws ec2 delete-route-table \
 
 Output du CLI:
 
+Aucun output
+
 Output de l'interface grafique :
+
 ![image](<Image/Capture_decrant_IG_AWS_ec2_delete_route_table .png>)
