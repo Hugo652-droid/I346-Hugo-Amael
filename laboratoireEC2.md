@@ -133,7 +133,9 @@ Output:
 ```
 
 
-## Créer la table de routage
+## Gestion de la table de routage
+
+### Créer la table
 
 - [Documentation AWS - Créer une table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-route-table.html)
 
@@ -172,6 +174,8 @@ Output de l'interface grafique :
 
 ![image](<Image/Capture d'ecrant IG AWS ec2 creat route table .png>)
 
+### Supprimer la table
+
 - [Documentation AWS - supprimer une table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-route-table.html)
 
 Suprimmer la route table depuis le CLI:
@@ -189,3 +193,39 @@ Aucun output
 Output de l'interface grafique :
 
 ![image](<Image/Capture_decrant_IG_AWS_ec2_delete_route_table .png>)
+
+### Associer la table
+
+- [Documentation AWS - Associer la table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
+
+Associer depuis le CLI:
+
+```
+$ aws ec2 associate-route-table\
+ --route-table-id rtb-09eea99d8ac647a5f\
+ --subnet-id subnet-092ced6aa04603165\
+ --region eu-central-1\
+ --profile DEVOPSTEAM05\
+--output table
+```
+
+Output depuis CLI:
+
+```
+-------------------------------------------------
+|              AssociateRouteTable              |
++----------------+------------------------------+
+|  AssociationId |  rtbassoc-067eb31bcc2d1a3cc  |
++----------------+------------------------------+
+||              AssociationState               ||
+|+----------------+----------------------------+|
+||  State         |  associated                ||
+|+----------------+----------------------------+|
+
+```
+
+Output depuis l'interface graphique :
+
+![image](https://github.com/user-attachments/assets/49c474f9-b322-473b-99d5-160226c3753f)
+
+
