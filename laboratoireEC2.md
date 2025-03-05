@@ -63,3 +63,53 @@ Tableau de tout les sous-réseaux
 Lister UN sous-réseau en particulier:
 
 
+## Créer la table de routage
+
+- [Documentation AWS Créer une table de routage] (https://docs.aws.amazon.com/cli/latest/reference/ec2/create-route-table.html)
+
+Créer la table de routage :
+```
+ aws ec2 create-route-table --vpc-id vpc-0a22d771f16ae549d --profile DEVOPSTEAM05 --region eu-central-1
+```
+
+Output du CLI:
+```
+{
+    "RouteTable": {
+        "Associations": [],
+        "PropagatingVgws": [],
+        "RouteTableId": "rtb-028cd789bcaf18038",
+        "Routes": [
+            {
+                "DestinationCidrBlock": "10.0.0.0/16",
+                "GatewayId": "local",
+                "Origin": "CreateRouteTable",
+                "State": "active"
+            }
+        ],
+        "Tags": [],
+        "VpcId": "vpc-0a22d771f16ae549d",
+        "OwnerId": "709024702237"
+    },
+    "ClientToken": "575fae50-7c3b-44ca-b651-aa487d17c588"
+}
+```
+
+Output de l'interface grafique :
+![alt text](image/Capture%20d'ecrant%20IG%20AWS%20ec2%20creat%20route%20table%20.png)
+
+- [Documentation AWS supprimer une table de routage] (https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-route-table.html)
+
+Pour suprimmer la route table
+```
+aws ec2 delete-route-table \
+	--route-table-id rtb-028cd789bcaf18038 \
+	--profile DEVOPSTEAM05 \
+	--region eu-central-1
+```
+
+Output du CLI:
+``````
+
+Output de l'interface grafique :
+![alt text](image/Capture_decrant_IG_AWS_ec2_delete_route_table%20.png)
