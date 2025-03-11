@@ -238,6 +238,24 @@ Output du CLI :
 ||+------------------------------+--------------------------+||
 ```
 
+### Créer le tag d'un composant
+- [Documentation AWS - Créer un tag](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-tags.html)
+
+Créer le tag de la route table :
+
+```
+aws ec2 create-tags\
+     --resources rtb-09eea99d8ac647a5f\
+     --tags Key=Name,Value=private-rte-table-devopsteam05\
+     --profile DEVOPSTEAM05\
+     --region eu-central-1
+```
+
+Output:
+```
+Nous n'avons pas les autoriastion pour alors nous n'avons pas de retour
+```
+
 ### Associer la table
 
 - [Documentation AWS - Associer la table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-route-table.html)
