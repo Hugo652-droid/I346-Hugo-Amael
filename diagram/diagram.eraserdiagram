@@ -6,14 +6,19 @@ Internet [icon: cloud]
 VPC_SI-CMI2b [icon: aws-vpc] {
   IGW [icon: aws-internet-gateway]
 
-  Main Server {
+  DMZ {
     SSH_SRV [icon: aws-ec2]
     NAT [icon: aws-nat-gateway]
   }
 
-  Route_Table [icon: aws-route-table]
+  Route_Table [icon: aws-route-table] 
 
   Subnet_Devopsteam05 [color: red] {
+    Route_Table_subnet05 [icon: aws-route-table] {
+      Route_igw [icon: aws-route-53]
+      Route_ClI_LIN [icon: aws-route-53]
+      Route_ClI_WIN [icon: aws-route-53]
+    }
     Cli_WIN [icon: aws-ec2]
     Cli_LIN [icon: aws-ec2]
   }
@@ -21,7 +26,9 @@ VPC_SI-CMI2b [icon: aws-vpc] {
 
 
 // Define connections
-Internet > IGW > SSH_SRV 
-SSH_SRV > Route_Table
-Route_Table > Cli_WIN, Cli_LIN
-Route_Table > NAT > IGW 
+Internet > IGW > SSH_SRV > Route_Table
+Route_Table > Route_Table_subnet05
+Route_ClI_LIN > Cli_LIN
+Route_ClI_WIN > Cli_WIN
+Cli_WIN, Cli_LIN > Route_igw > Route_Table> NAT  
+
