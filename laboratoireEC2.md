@@ -374,10 +374,25 @@ aws ec2 terminate-instances --instance-ids i-1234567890abcdef0
 Créer depuis le CLI
 
 ```
-
+aws ec2 create-security-group\
+ --group-name "sg private subnet05"\
+ --description "Security groupe for the Subnet05"\
+ --vpc-id vpc-0a22d771f16ae549d\
+ --profile DEVOPSTEAM05\
+ --region eu-central-1\
+ --output table
 ```
 
 Output depuis le CLI
+
+```
+---------------------------------------------------------------------------------------------------
+|                                       CreateSecurityGroup                                       |
++------------------+------------------------------------------------------------------------------+
+|  GroupId         |  sg-073e4fd760f962c64                                                        |
+|  SecurityGroupArn|  arn:aws:ec2:eu-central-1:709024702237:security-group/sg-073e4fd760f962c64   |
++------------------+------------------------------------------------------------------------------+
+```
 
 Output depuis le site Web
 
