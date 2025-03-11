@@ -346,4 +346,12 @@ aws ec2 delete-route\
 
 Output depuis le CLI
 
-Pas de droits pour faire cette action, voici donc le message d'erreur
+Pas de droits pour faire cette action
+
+### Arreter une instance
+
+Voici la comande à utiliser :
+
+```
+aws ec2 terminate-instances --instance-ids i-1234567890abcdef0
+```
