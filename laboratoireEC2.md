@@ -306,10 +306,7 @@ aws ec2 disassociate-route-table\
 
 Output depuis le CLI
 
-Pas de droits pour faire cette action, voici donc le message d'erreur
-```
-An error occurred (UnauthorizedOperation) when calling the DisassociateRouteTable operation: You are not authorized to perform this operation. User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: ec2:DisassociateRouteTable on resource: arn:aws:ec2:eu-central-1:709024702237:*/* because no identity-based policy allows the ec2:DisassociateRouteTable action. Encoded authorization failure message: _jcP-nx6SWAGhDmerAMc-shVPOmXQXwPPwJhtZOvvaQmGUuMzx-sQ2vdg_roUQNYPBsqGlnucOfF_KkddpNAlwEIP4XTgh1KVmdPVDlXH4mz-zHVeJihSJD7tGJxu60-TMs87KcSfNLpPVY8G7uvpoTDiEQC6dt1niiOKHf3CVR830U2768OEABP5Z7lF9dp-ore7iVTSSOrgCgf1nZgdM89nExnfUY_5Hw1zhyiYmMTNOe6AhMCBwUo1Ka6_rvwxXfYZ2E75B2NKdlZeh2NXvcroJgDNfBux--uig9W1Djjp9oh5JlqrhB2I9Q03CY6d2HA97ERYH79-SYNcKlMeuS3Q4QK5KcqdNF-fM0L8-W26d9DEKVMkKSlDlFKTJSwY1GFeoVeduxoksD8wTQ2eA80hBE8DPL0hMpO5BX_ujebpfnyQClz2BGwLWbrHYBjCNUcGduNSXOhrKOlXxBY8eFXrJwypea-Rx-BLCXhG_SdW448HJQLsDUN2GRvE4bPmCfOfaiio_5L1Kc
-```
+Pas de droits pour faire cette action
 
 ### Créer des routes
 
@@ -329,11 +326,7 @@ aws ec2 create-route\
 
 Output depuis le CLI
 
-Pas de droits pour faire cette action, voici donc le message d'erreur
-```
-An error occurred (UnauthorizedOperation) when calling the CreateRoute operation: You are not authorized to perform this operation. User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: ec2:CreateRoute on resource: arn:aws:ec2:eu-central-1:709024702237:route-table/rtb-09eea99d8ac647a5f because no identity-based policy allows the ec2:CreateRoute action. Encoded authorization failure message: lTaDjUTUQypMYvFZ3-R8rQLY1gMf1iEb_8xTpRayWJELltc8Q-UfxDZY01mQijsiJTVix9XZB7cH-q4Xxcv8vpGHF9hhHOGAqgyXtmYiue6WhV6T_f5PMfsBkuiT8katyrYHkqQwYcI6R6VgeLn1jeAm8JtPzVyf36p4xknze1CJl2ow2fZ3eBbCWI417UCnh-pcy5ZAw0sg3fE72GvZTDrV7AHokdGP42zRGzw64iElYfK35P_JD_HkUpKVtDAAw1gmG7L9IO4hkE6mfHCTyYZin24-FxGzpTDLnlsXux9PdUk9zn8k41eMPjNJePCiwrokni68USFj46EGCCKVW2zbC9Izj6sK9nIs1UYW078pXOLCQmA-Zvdq-9b3dYf16nbEqY1Ku-Ijlaxi149oujPJDjr123jrmR9w0feYxrPSYcmCQhcMmRsiBf11LNtoekxvegiP9OxatKcHEQSMg_rJsNoen2KoGOy5zLNX8C_SyE190jlh5Hx3Fu8vjduNnI4aJTxQkmSVF1pps1DM_JuWzedkX3RE2sPXs39EM5NpNFJ8kkdqC2NkIuB6pYNXDgz4yyR5-F86isZP63I43hDV_A
-
-```
+Pas de droits pour faire cette action
 
 ### Supprimer une routes
 
@@ -371,6 +364,8 @@ aws ec2 terminate-instances --instance-ids i-1234567890abcdef0
 
 ### Créer un groupe de sécurité
 
+- [Documentation AWS - Créer un groupe de sécurité](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-security-group.html#examples)
+
 Créer depuis le CLI
 
 ```
@@ -397,6 +392,25 @@ Output depuis le CLI
 Output depuis le site Web
 
 ![image](https://github.com/user-attachments/assets/fd624824-a0cb-4d2a-8b79-4c4ddc7f51ef)
+
+### Supprimer un groupe de sécurité
+
+- [Documentation AWS - Supprimer un groupe de sécurité](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-security-group.html#examples)
+
+Supprimer depuis le CLI
+
+```
+aws ec2 delete-security-group\
+--group-name "sg private subnet05"\
+--profile DEVOPSTEAM05\
+--region eu-central-1
+```
+
+Output depuis le CLI 
+
+Pas de droits pour faire cette action
+
+
 
 
 
