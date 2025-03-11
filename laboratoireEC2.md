@@ -272,11 +272,28 @@ Output depuis l'interface graphique :
 
 ![image](https://github.com/user-attachments/assets/49c474f9-b322-473b-99d5-160226c3753f)
 
-### Desassocier la table
+### Dissocier la table
 
-- [Documentation AWS - Desassocier la table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/disassociate-route-table.html)
+- [Documentation AWS - Dissocier la table de routage](https://docs.aws.amazon.com/cli/latest/reference/ec2/disassociate-route-table.html)
+
+Dissocier depuis le CLI
+```
+$ aws ec2 disassociate-route-table\
+ --association-id rtb-09eea99d8ac647a5f\
+ --region eu-central-1\
+ --profile DEVOPSTEAM05\
+ --output table
+```
+
+Output depuis le CLI
+
+Pas de droits pour faire cette action, voici donc le message d'erreur
+```
+An error occurred (UnauthorizedOperation) when calling the DisassociateRouteTable operation: You are not authorized to perform this operation. User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: ec2:DisassociateRouteTable on resource: arn:aws:ec2:eu-central-1:709024702237:*/* because no identity-based policy allows the ec2:DisassociateRouteTable action. Encoded authorization failure message: _jcP-nx6SWAGhDmerAMc-shVPOmXQXwPPwJhtZOvvaQmGUuMzx-sQ2vdg_roUQNYPBsqGlnucOfF_KkddpNAlwEIP4XTgh1KVmdPVDlXH4mz-zHVeJihSJD7tGJxu60-TMs87KcSfNLpPVY8G7uvpoTDiEQC6dt1niiOKHf3CVR830U2768OEABP5Z7lF9dp-ore7iVTSSOrgCgf1nZgdM89nExnfUY_5Hw1zhyiYmMTNOe6AhMCBwUo1Ka6_rvwxXfYZ2E75B2NKdlZeh2NXvcroJgDNfBux--uig9W1Djjp9oh5JlqrhB2I9Q03CY6d2HA97ERYH79-SYNcKlMeuS3Q4QK5KcqdNF-fM0L8-W26d9DEKVMkKSlDlFKTJSwY1GFeoVeduxoksD8wTQ2eA80hBE8DPL0hMpO5BX_ujebpfnyQClz2BGwLWbrHYBjCNUcGduNSXOhrKOlXxBY8eFXrJwypea-Rx-BLCXhG_SdW448HJQLsDUN2GRvE4bPmCfOfaiio_5L1Kc
+```
 
 ### Créer des routes
+
 - [Documentation AWS - Créer des routes](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-route.html)
 
 
