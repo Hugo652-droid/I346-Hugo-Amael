@@ -314,4 +314,24 @@ An error occurred (UnauthorizedOperation) when calling the DisassociateRouteTabl
 
 - [Documentation AWS - Créer des routes](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-route.html)
 
+Créer depuis le CLI
+
+```
+$ aws ec2 create-route\
+ --route-table-id rtb-09eea99d8ac647a5f\
+ --destination-cidr-block 0.0.0.0/0\
+ --gateway-id eni-0e382f5c175b09ce2\
+ --region eu-central-1\
+ --profile DEVOPSTEAM05
+
+```
+
+Output depuis le CLI
+
+Pas de droits pour faire cette action, voici donc le message d'erreur
+```
+An error occurred (UnauthorizedOperation) when calling the CreateRoute operation: You are not authorized to perform this operation. User: arn:aws:iam::709024702237:user/devopsteam05-i346 is not authorized to perform: ec2:CreateRoute on resource: arn:aws:ec2:eu-central-1:709024702237:route-table/rtb-09eea99d8ac647a5f because no identity-based policy allows the ec2:CreateRoute action. Encoded authorization failure message: lTaDjUTUQypMYvFZ3-R8rQLY1gMf1iEb_8xTpRayWJELltc8Q-UfxDZY01mQijsiJTVix9XZB7cH-q4Xxcv8vpGHF9hhHOGAqgyXtmYiue6WhV6T_f5PMfsBkuiT8katyrYHkqQwYcI6R6VgeLn1jeAm8JtPzVyf36p4xknze1CJl2ow2fZ3eBbCWI417UCnh-pcy5ZAw0sg3fE72GvZTDrV7AHokdGP42zRGzw64iElYfK35P_JD_HkUpKVtDAAw1gmG7L9IO4hkE6mfHCTyYZin24-FxGzpTDLnlsXux9PdUk9zn8k41eMPjNJePCiwrokni68USFj46EGCCKVW2zbC9Izj6sK9nIs1UYW078pXOLCQmA-Zvdq-9b3dYf16nbEqY1Ku-Ijlaxi149oujPJDjr123jrmR9w0feYxrPSYcmCQhcMmRsiBf11LNtoekxvegiP9OxatKcHEQSMg_rJsNoen2KoGOy5zLNX8C_SyE190jlh5Hx3Fu8vjduNnI4aJTxQkmSVF1pps1DM_JuWzedkX3RE2sPXs39EM5NpNFJ8kkdqC2NkIuB6pYNXDgz4yyR5-F86isZP63I43hDV_A
+
+```
+
 
