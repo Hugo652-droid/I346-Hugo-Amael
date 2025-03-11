@@ -336,6 +336,8 @@ An error occurred (UnauthorizedOperation) when calling the CreateRoute operation
 
 ### Supprimer une routes
 
+- [Documentation AWS - supprimer une route ](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-route.html#examples)
+
 Créer depuis le CLI:
 
 ```
@@ -350,8 +352,12 @@ Pas de droits pour faire cette action
 
 ### Arreter une instance
 
+- [Documentation AWS - arrêter l'instance ](https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html#examples)
+
 Voici la comande à utiliser :
 
 ```
 aws ec2 terminate-instances --instance-ids i-1234567890abcdef0
 ```
+
+
