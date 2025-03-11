@@ -1,11 +1,12 @@
-## Lister le VPC 
-### Depuis le site web aws
+## Affichage des élements réseaux
+### Lister le VPC
+Depuis le site web aws
 
 VPC > Your VPCs > vpc-0a22d771f16ae549d
 
 ![image](https://github.com/user-attachments/assets/be4ccc05-0a4f-449c-a4db-3473511d1601)
 
-### Depuis le CLI
+Depuis le CLI
 
 - [Documentation AWS - Describe VPCs](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html)
 
@@ -51,9 +52,9 @@ Outupt:
 ||+----------------------+------------------------------+||
 ```
 
-## Lister les sous-réseaux
+### Lister les sous-réseaux
 
-### Depuis le site web aws
+Depuis le site web aws
 
 Lister les subnets :
 
@@ -67,7 +68,7 @@ VPC > Your VPCs > vpc-0a22d771f16ae549d > Subnets > subnet-092ced6aa04603165 / s
 
 ![image](https://github.com/user-attachments/assets/7ec81e66-9ef2-417e-9b81-86e5ff0255c8)
 
-### Depuis le CLI
+Depuis le CLI
 
 - [AWS Documentation - Describe subnets](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-subnets.html)
 
@@ -350,16 +351,37 @@ Output depuis le CLI
 
 Pas de droits pour faire cette action
 
-## Les instances
+## Gestion des instances
+
+### Créer une instance
+
+- [Documentation AWS - Créer une instance](https://docs.aws.amazon.com/cli/latest/reference/opsworks/create-instance.html)
 
 ### Arreter une instance
 
-- [Documentation AWS - arrêter l'instance ](https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html#examples)
+- [Documentation AWS - Arrêter l'instance ](https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html#examples)
 
-Voici la comande à utiliser :
+Arreter depuis le CLI
 
 ```
 aws ec2 terminate-instances --instance-ids i-1234567890abcdef0
 ```
+
+## Gestion des groupes de sécurité
+
+### Créer un groupe de sécurité
+
+Créer depuis le CLI
+
+```
+
+```
+
+Output depuis le CLI
+
+Output depuis le site Web
+
+![image](https://github.com/user-attachments/assets/fd624824-a0cb-4d2a-8b79-4c4ddc7f51ef)
+
 
 
