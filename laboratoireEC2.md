@@ -85,7 +85,7 @@ Tableau de tout les sous-réseaux
 
 Lister UN subnet en particulier:
 ```
-$ aws ec2 describe-subnets \
+aws ec2 describe-subnets \
 --filters "Name=subnet-id,Values=subnet-092ced6aa04603165" \
 --region eu-central-1 \
 --profile DEVOPSTEAM05 \
