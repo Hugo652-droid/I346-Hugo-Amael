@@ -350,6 +350,8 @@ Output depuis le CLI
 
 Pas de droits pour faire cette action
 
+## Les instances
+
 ### Arreter une instance
 
 - [Documentation AWS - arrêter l'instance ](https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html#examples)
