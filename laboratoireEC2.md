@@ -264,7 +264,7 @@ Nous n'avons pas les autoriastion pour alors nous n'avons pas de retour
 Associer depuis le CLI:
 
 ```
-$ aws ec2 associate-route-table\
+aws ec2 associate-route-table\
  --route-table-id rtb-09eea99d8ac647a5f\
  --subnet-id subnet-092ced6aa04603165\
  --region eu-central-1\
@@ -297,7 +297,7 @@ Output depuis l'interface graphique :
 
 Dissocier depuis le CLI
 ```
-$ aws ec2 disassociate-route-table\
+aws ec2 disassociate-route-table\
  --association-id rtb-09eea99d8ac647a5f\
  --region eu-central-1\
  --profile DEVOPSTEAM05\
@@ -318,7 +318,7 @@ An error occurred (UnauthorizedOperation) when calling the DisassociateRouteTabl
 Créer depuis le CLI
 
 ```
-$ aws ec2 create-route\
+aws ec2 create-route\
  --route-table-id rtb-09eea99d8ac647a5f\
  --destination-cidr-block 0.0.0.0/0\
  --gateway-id eni-0e382f5c175b09ce2\
