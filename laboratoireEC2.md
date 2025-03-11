@@ -334,4 +334,16 @@ An error occurred (UnauthorizedOperation) when calling the CreateRoute operation
 
 ```
 
+### Supprimer une routes
 
+Créer depuis le CLI:
+
+```
+aws ec2 delete-route\
+ --route-table-id rtb-22574640\
+ --destination-cidr-block 0.0.0.0/0
+```
+
+Output depuis le CLI
+
+Pas de droits pour faire cette action, voici donc le message d'erreur
