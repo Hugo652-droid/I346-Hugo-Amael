@@ -348,7 +348,7 @@ Pas de droits pour faire cette action
 
 ### Créer une instance
 
-- [Documentation AWS - Créer une instance](https://docs.aws.amazon.com/cli/latest/reference/opsworks/create-instance.html)
+- [Documentation AWS - Créer une instance](https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html)
 
 ### Arreter une instance
 
@@ -357,8 +357,70 @@ Pas de droits pour faire cette action
 Arreter depuis le CLI
 
 ```
-aws ec2 terminate-instances --instance-ids i-1234567890abcdef0
+aws ec2 terminate-instances\
+ --instance-ids i-1234567890abcdef0
 ```
+
+### Créer une "clé privée"
+
+- [Documentation AWS - Créer une clé privée](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-key-pairs.html#examples)
+
+Créer depuis le CLI
+
+```
+aws ec2 create-key-pair \
+    --key-name cli-lin-subnet05 \
+    --key-type rsa \
+    --key-format pem \
+    --profile DEVOPSTEAM05\
+    --region eu-central-1
+```
+
+Output depuis le CLI
+
+```
+
+```
+
+Output depuis l'interface graphique
+
+Pas de droit pour executer cette action
+
+### Lister les "clé privées"
+
+Lister depuis le CLI
+
+[Documentation AWS - Lister les clés privées](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-key-pairs.html#examples)
+
+```
+aws ec2 describe-key-pairs \
+    --profile DEVOPSTEAM05\
+    --region eu-central-1\
+    --output table
+```
+
+Output depuis le CLI
+
+```
+
+```
+
+### Supprimer une "clé privée"
+
+- [Documenation AWS - Supprimer une clé privée](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-key-pair.html#examples)
+
+Supprimer depuis le CLI
+
+```
+aws ec2 delete-key-pair \
+    --key-name cli-lin-subnet05\
+     --profile DEVOPSTEAM05\
+     --region eu-central-1
+```
+
+Output depuis le CLI
+
+Pas de droits pour exécuter cette action
 
 ## Gestion des groupes de sécurité
 
