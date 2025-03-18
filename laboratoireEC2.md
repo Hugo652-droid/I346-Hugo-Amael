@@ -133,6 +133,14 @@ Output:
 
 ```
 
+### Supprimer un subnet
+
+Dans le CLI:
+```
+aws ec2 delete-subnet --subnet-id subnet-092ced6aa04603165
+```
+
+
 
 ## Gestion de la table de routage
 
