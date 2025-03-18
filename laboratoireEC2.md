@@ -360,7 +360,7 @@ Pas de droits pour faire cette action
 
 - [Documentation AWS - Créer une instance](https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html)
 
-Créer depuis le CLI
+Créer depuis le CLI (LIN)
 ```
 aws ec2 run-instances \
     --image-id ami-0584590e5f0e97daa \
@@ -369,6 +369,20 @@ aws ec2 run-instances \
     --subnet-id subnet-092ced6aa04603165 \
     --security-group-ids sg-0ae65e1e8f9697e4a \
     --private-ip-address 10.0.05.10 \
+    --region eu-central-1 \
+    --profile DEVOPSTEAM05 \
+    --output table
+```
+
+Créer depuis le CLI (WIN)
+```
+aws ec2 run-instances \
+    --image-id ami-0584590e5f0e97daa \
+    --instance-type t2.micro \
+    --key-name cli-win-subnet05 \
+    --subnet-id subnet-092ced6aa04603165 \
+    --security-group-ids sg-0ae65e1e8f9697e4a \
+    --private-ip-address 10.0.05.11 \
     --region eu-central-1 \
     --profile DEVOPSTEAM05 \
     --output table
