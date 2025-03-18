@@ -378,7 +378,7 @@ Créer depuis le CLI (WIN)
 ```
 aws ec2 run-instances \
     --image-id ami-0584590e5f0e97daa \
-    --instance-type t2.micro \
+    --instance-type t3.micro \
     --key-name cli-win-subnet05 \
     --subnet-id subnet-092ced6aa04603165 \
     --security-group-ids sg-0ae65e1e8f9697e4a \
