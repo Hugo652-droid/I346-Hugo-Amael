@@ -529,6 +529,140 @@ aws ec2 run-instances \
     --output table
 ```
 
+Output :
+```
+-----------------------------------------------------------------------------
+|                               RunInstances                                |
++-------------------------------+-------------------------------------------+
+|  OwnerId                      |  709024702237                             |
+|  ReservationId                |  r-0f9762bfe23f4b6fb                      |
++-------------------------------+-------------------------------------------+
+||                                Instances                                ||
+|+--------------------------+----------------------------------------------+|
+||  AmiLaunchIndex          |  0                                           ||
+||  Architecture            |  x86_64                                      ||
+||  BootMode                |  uefi                                        ||
+||  ClientToken             |  99d1aa9f-ac11-4dc9-84e0-70fab4812041        ||
+||  CurrentInstanceBootMode |  uefi                                        ||
+||  EbsOptimized            |  False                                       ||
+||  EnaSupport              |  True                                        ||
+||  Hypervisor              |  xen                                         ||
+||  ImageId                 |  ami-045114d716addc65d                       ||
+||  InstanceId              |  i-005ef53567c5833dd                         ||
+||  InstanceType            |  t3.micro                                    ||
+||  KeyName                 |  KEY-I346-SUB-DEVOPSTEAM05                   ||
+||  LaunchTime              |  2025-03-18T14:43:41+00:00                   ||
+||  Platform                |  windows                                     ||
+||  PrivateDnsName          |  ip-10-0-5-11.eu-central-1.compute.internal  ||
+||  PrivateIpAddress        |  10.0.5.11                                   ||
+||  PublicDnsName           |                                              ||
+||  RootDeviceName          |  /dev/sda1                                   ||
+||  RootDeviceType          |  ebs                                         ||
+||  SourceDestCheck         |  True                                        ||
+||  StateTransitionReason   |                                              ||
+||  SubnetId                |  subnet-092ced6aa04603165                    ||
+||  VirtualizationType      |  hvm                                         ||
+||  VpcId                   |  vpc-0a22d771f16ae549d                       ||
+|+--------------------------+----------------------------------------------+|
+|||                   CapacityReservationSpecification                    |||
+||+---------------------------------------------------------+-------------+||
+|||  CapacityReservationPreference                          |  open       |||
+||+---------------------------------------------------------+-------------+||
+|||                              CpuOptions                               |||
+||+-------------------------------------------------------+---------------+||
+|||  CoreCount                                            |  1            |||
+|||  ThreadsPerCore                                       |  2            |||
+||+-------------------------------------------------------+---------------+||
+|||                            EnclaveOptions                             |||
+||+--------------------------------------+--------------------------------+||
+|||  Enabled                             |  False                         |||
+||+--------------------------------------+--------------------------------+||
+|||                          MaintenanceOptions                           |||
+||+-----------------------------------------+-----------------------------+||
+|||  AutoRecovery                           |  default                    |||
+||+-----------------------------------------+-----------------------------+||
+|||                            MetadataOptions                            |||
+||+-------------------------------------------------+---------------------+||
+|||  HttpEndpoint                                   |  enabled            |||
+|||  HttpProtocolIpv6                               |  disabled           |||
+|||  HttpPutResponseHopLimit                        |  2                  |||
+|||  HttpTokens                                     |  required           |||
+|||  InstanceMetadataTags                           |  disabled           |||
+|||  State                                          |  pending            |||
+||+-------------------------------------------------+---------------------+||
+|||                              Monitoring                               |||
+||+-----------------------------+-----------------------------------------+||
+|||  State                      |  disabled                               |||
+||+-----------------------------+-----------------------------------------+||
+|||                           NetworkInterfaces                           |||
+||+------------------------------+----------------------------------------+||
+|||  Description                 |                                        |||
+|||  InterfaceType               |  interface                             |||
+|||  MacAddress                  |  0a:ac:19:8e:be:81                     |||
+|||  NetworkInterfaceId          |  eni-018f143e6a3af428b                 |||
+|||  OwnerId                     |  709024702237                          |||
+|||  PrivateIpAddress            |  10.0.5.11                             |||
+|||  SourceDestCheck             |  True                                  |||
+|||  Status                      |  in-use                                |||
+|||  SubnetId                    |  subnet-092ced6aa04603165              |||
+|||  VpcId                       |  vpc-0a22d771f16ae549d                 |||
+||+------------------------------+----------------------------------------+||
+||||                             Attachment                              ||||
+|||+----------------------------+----------------------------------------+|||
+||||  AttachTime                |  2025-03-18T14:43:41+00:00             ||||
+||||  AttachmentId              |  eni-attach-0abe45eead32976d9          ||||
+||||  DeleteOnTermination       |  True                                  ||||
+||||  DeviceIndex               |  0                                     ||||
+||||  NetworkCardIndex          |  0                                     ||||
+||||  Status                    |  attaching                             ||||
+|||+----------------------------+----------------------------------------+|||
+||||                               Groups                                ||||
+|||+-----------------------+---------------------------------------------+|||
+||||  GroupId              |  sg-0ae65e1e8f9697e4a                       ||||
+||||  GroupName            |  sg private subnet05                        ||||
+|||+-----------------------+---------------------------------------------+|||
+||||                              Operator                               ||||
+|||+-------------------------------------+-------------------------------+|||
+||||  Managed                            |  False                        ||||
+|||+-------------------------------------+-------------------------------+|||
+||||                         PrivateIpAddresses                          ||||
+|||+-----------------------------------------+---------------------------+|||
+||||  Primary                                |  True                     ||||
+||||  PrivateIpAddress                       |  10.0.5.11                ||||
+|||+-----------------------------------------+---------------------------+|||
+|||                               Operator                                |||
+||+--------------------------------------+--------------------------------+||
+|||  Managed                             |  False                         |||
+||+--------------------------------------+--------------------------------+||
+|||                               Placement                               |||
+||+-------------------------------------+---------------------------------+||
+|||  AvailabilityZone                   |  eu-central-1c                  |||
+|||  GroupName                          |                                 |||
+|||  Tenancy                            |  default                        |||
+||+-------------------------------------+---------------------------------+||
+|||                         PrivateDnsNameOptions                         |||
+||+------------------------------------------------------+----------------+||
+|||  EnableResourceNameDnsAAAARecord                     |  False         |||
+|||  EnableResourceNameDnsARecord                        |  False         |||
+|||  HostnameType                                        |  ip-name       |||
+||+------------------------------------------------------+----------------+||
+|||                            SecurityGroups                             |||
+||+------------------------+----------------------------------------------+||
+|||  GroupId               |  sg-0ae65e1e8f9697e4a                        |||
+|||  GroupName             |  sg private subnet05                         |||
+||+------------------------+----------------------------------------------+||
+|||                                 State                                 |||
+||+-----------------------------+-----------------------------------------+||
+|||  Code                       |  0                                      |||
+|||  Name                       |  pending                                |||
+||+-----------------------------+-----------------------------------------+||
+|||                              StateReason                              |||
+||+----------------------------------+------------------------------------+||
+|||  Code                            |  pending                           |||
+|||  Message                         |  pending                           |||
+||+----------------------------------+------------------------------------+||
+```
+
 ### Arrêter une instance
 
 - [Documentation AWS - Arrêter l'instance ](https://docs.aws.amazon.com/cli/latest/reference/ec2/stop-instances.html)
@@ -540,6 +674,25 @@ aws ec2 stop-instances\
  --instance-ids i-1234567890abcdef0
 ```
 
+Output :
+```
+{
+    "StoppingInstances": [
+        {
+            "InstanceId": "i-0ae1c1cf339881b06",
+            "CurrentState": {
+                "Code": 64,
+                "Name": "stopping"
+            },
+            "PreviousState": {
+                "Code": 16,
+                "Name": "running"
+            }
+        }
+    ]
+}
+```
+
 ### Supprimer une instance
 
 - [Documentation AWS - Arrêter l'instance ](https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html#examples)
@@ -549,6 +702,25 @@ Supprimer depuis le CLI
 ```
 aws ec2 terminate-instances\
  --instance-ids i-1234567890abcdef0
+```
+
+Output :
+```
+{
+    "TerminatingInstances": [
+        {
+            "InstanceId": "i-0ae1c1cf339881b06",
+            "CurrentState": {
+                "Code": 48,
+                "Name": "terminated"
+            },
+            "PreviousState": {
+                "Code": 80,
+                "Name": "stopped"
+            }
+        }
+    ]
+}
 ```
 
 ### Se connecter à une instance
