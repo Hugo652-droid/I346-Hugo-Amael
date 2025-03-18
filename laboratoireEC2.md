@@ -388,11 +388,22 @@ aws ec2 run-instances \
     --output table
 ```
 
-### Arreter une instance
+### Arrêter une instance
+
+- [Documentation AWS - Arrêter l'instance ](https://docs.aws.amazon.com/cli/latest/reference/ec2/stop-instances.html)
+
+Arrêter depuis le CLI
+
+```
+aws ec2 stop-instances\
+ --instance-ids i-1234567890abcdef0
+```
+
+### Supprimer une instance
 
 - [Documentation AWS - Arrêter l'instance ](https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html#examples)
 
-Arreter depuis le CLI
+Supprimer depuis le CLI
 
 ```
 aws ec2 terminate-instances\
