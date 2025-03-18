@@ -251,11 +251,13 @@ aws ec2 create-tags\
      --profile DEVOPSTEAM05\
      --region eu-central-1
 ```
+Output depuis le CLI :
 
-Output:
-```
-Nous n'avons pas les autoriastion pour alors nous n'avons pas de retour
-```
+Pas d'ouput
+
+Output depuis l'interface graphique :
+![image](https://github.com/user-attachments/assets/0ac58ae4-dd97-4bde-8625-fa6aa1770b22)
+
 
 ### Associer la table
 
@@ -315,18 +317,21 @@ Pas de droits pour faire cette action
 Créer depuis le CLI
 
 ```
-aws ec2 create-route\
- --route-table-id rtb-09eea99d8ac647a5f\
- --destination-cidr-block 0.0.0.0/0\
- --gateway-id eni-0e382f5c175b09ce2\
- --region eu-central-1\
- --profile DEVOPSTEAM05
+aws ec2 create-route \
+    --route-table-id rtb-09eea99d8ac647a5f \
+    --destination-cidr-block 0.0.0.0/0 \
+    --instance-id i-09d3919ca6d27ab6b \
+    --region eu-central-1 \
+    --profile DEVOPSTEAM05\
+    --output table
 
 ```
 
 Output depuis le CLI
 
-Pas de droits pour faire cette action
+```
+
+```
 
 ### Supprimer une routes
 
@@ -351,6 +356,20 @@ Pas de droits pour faire cette action
 ### Créer une instance
 
 - [Documentation AWS - Créer une instance](https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html)
+
+Créer depuis le CLI
+```
+aws ec2 run-instances \
+    --image-id ami-0584590e5f0e97daa \
+    --instance-type t2.micro \
+    --key-name cli-lin-subnet05 \
+    --subnet-id subnet-092ced6aa04603165 \
+    --security-group-ids sg-0ae65e1e8f9697e4a \
+    --private-ip-address 10.0.05.10 \
+    --region eu-central-1 \
+    --profile DEVOPSTEAM05 \
+    --output table
+```
 
 ### Arreter une instance
 
