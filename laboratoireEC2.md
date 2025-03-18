@@ -365,7 +365,7 @@ Créer depuis le CLI (LIN)
 aws ec2 run-instances \
     --image-id ami-0584590e5f0e97daa \
     --instance-type t2.micro \
-    --key-name cli-lin-subnet05 \
+    --key-name KEY-I346-SUB-DEVOPSTEAM05 \
     --subnet-id subnet-092ced6aa04603165 \
     --security-group-ids sg-0ae65e1e8f9697e4a \
     --private-ip-address 10.0.05.10 \
@@ -379,7 +379,7 @@ Créer depuis le CLI (WIN)
 aws ec2 run-instances \
     --image-id ami-0584590e5f0e97daa \
     --instance-type t3.micro \
-    --key-name cli-win-subnet05 \
+    --key-name KEY-I346-SUB-DEVOPSTEAM05 \
     --subnet-id subnet-092ced6aa04603165 \
     --security-group-ids sg-0ae65e1e8f9697e4a \
     --private-ip-address 10.0.05.11 \
@@ -419,11 +419,12 @@ Créer depuis le CLI
 
 ```
 aws ec2 create-key-pair \
-    --key-name cli-lin-subnet05 \
+    --key-name KEY-I346-SUB-DEVOPSTEAM05 \
     --key-type rsa \
     --key-format pem \
     --profile DEVOPSTEAM05\
-    --region eu-central-1
+    --region eu-central-1\
+    --output text > KEY-I346-SUB-DEVOPSTEAM05.pem
 ```
 
 Output depuis le CLI
@@ -510,7 +511,7 @@ Supprimer depuis le CLI
 
 ```
 aws ec2 delete-key-pair \
-    --key-name cli-lin-subnet05\
+    --key-name KEY-I346-SUB-DEVOPSTEAM05\
      --profile DEVOPSTEAM05\
      --region eu-central-1
 ```
