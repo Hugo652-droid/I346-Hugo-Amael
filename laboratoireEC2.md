@@ -614,8 +614,30 @@ Dans le CLI :
 ```
 aws ec2 authorize-security-group-ingress \
     --group-id sg-0ae65e1e8f9697e4a \
-    --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=10.0.0.0/28,Description=SSH-FROM-DMZ}]" \
+    --ip-permissions "IpProtocol=tcp,FromPort=3389,ToPort=3389,IpRanges=[{CidrIp=10.0.0.0/28,Description=RDP-FROM-DMZ}]" \
     --region eu-central-1 \
     --profile DEVOPSTEAM05\
     --output table
+```
+
+Output :
+```
+---------------------------------------------------------------------------------------------------------------
+|                                        AuthorizeSecurityGroupIngress                                        |
++------------------------------------------------------------+------------------------------------------------+
+|  Return                                                    |  True                                          |
++------------------------------------------------------------+------------------------------------------------+
+||                                            SecurityGroupRules                                             ||
+|+----------------------+------------------------------------------------------------------------------------+|
+||  CidrIpv4            |  10.0.0.0/28                                                                       ||
+||  Description         |  RDP-FROM-DMZ                                                                      ||
+||  FromPort            |  3389                                                                              ||
+||  GroupId             |  sg-0ae65e1e8f9697e4a                                                              ||
+||  GroupOwnerId        |  709024702237                                                                      ||
+||  IpProtocol          |  tcp                                                                               ||
+||  IsEgress            |  False                                                                             ||
+||  SecurityGroupRuleArn|  arn:aws:ec2:eu-central-1:709024702237:security-group-rule/sgr-01a664c41e3b0d266   ||
+||  SecurityGroupRuleId |  sgr-01a664c41e3b0d266                                                             ||
+||  ToPort              |  3389                                                                              ||
+|+----------------------+------------------------------------------------------------------------------------+|
 ```
