@@ -382,6 +382,18 @@ aws ec2 terminate-instances\
  --instance-ids i-1234567890abcdef0
 ```
 
+### Se connecter à une instance
+
+- [Documentation AWS - Se connecter à une instance ](https://docs.aws.amazon.com/fr_fr/AWSEC2/latest/UserGuide/connect-using-eice.html)
+
+Se connecter depuis le CLI
+
+```
+aws ec2-instance-connect open-tunnel \
+    --instance-id i-0123456789example \
+    --local-port 22
+```
+
 ### Créer une "clé privée"
 
 - [Documentation AWS - Créer une clé privée](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-key-pairs.html#examples)
