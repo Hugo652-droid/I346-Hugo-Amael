@@ -324,13 +324,16 @@ aws ec2 create-route \
     --region eu-central-1 \
     --profile DEVOPSTEAM05\
     --output table
-
 ```
 
 Output depuis le CLI
 
 ```
-
+--------------------
+|    CreateRoute   |
++---------+--------+
+|  Return |  True  |
++---------+--------+
 ```
 
 ### Supprimer une routes
@@ -526,8 +529,8 @@ Output depuis le CLI
 ---------------------------------------------------------------------------------------------------
 |                                       CreateSecurityGroup                                       |
 +------------------+------------------------------------------------------------------------------+
-|  GroupId         |  sg-073e4fd760f962c64                                                        |
-|  SecurityGroupArn|  arn:aws:ec2:eu-central-1:709024702237:security-group/sg-073e4fd760f962c64   |
+|  GroupId         |  sg-0ae65e1e8f9697e4a                                                        |
+|  SecurityGroupArn|  arn:aws:ec2:eu-central-1:709024702237:security-group/sg-0ae65e1e8f9697e4a   |
 +------------------+------------------------------------------------------------------------------+
 ```
 
@@ -552,7 +555,52 @@ Output depuis le CLI
 
 Pas de droits pour faire cette action
 
+## Autorisier un group de securité 
 
+- [Documentation AWS - Créer un groupe de sécurité](https://docs.aws.amazon.com/cli/latest/reference/ec2/authorize-security-group-ingress.html)
 
+### Pour linux
 
+Dans le CLI :
+```
+aws ec2 authorize-security-group-ingress \
+    --group-id sg-0ae65e1e8f9697e4a \
+    --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=10.0.0.0/28,Description=SSH-FROM-DMZ}]" \
+    --region eu-central-1 \
+    --profile DEVOPSTEAM05\
+    --output table
+```
 
+Output :
+```
+---------------------------------------------------------------------------------------------------------------
+|                                        AuthorizeSecurityGroupIngress                                        |
++------------------------------------------------------------+------------------------------------------------+
+|  Return                                                    |  True                                          |
++------------------------------------------------------------+------------------------------------------------+
+||                                            SecurityGroupRules                                             ||
+|+----------------------+------------------------------------------------------------------------------------+|
+||  CidrIpv4            |  10.0.0.0/28                                                                       ||
+||  Description         |  SSH-FROM-DMZ                                                                      ||
+||  FromPort            |  22                                                                                ||
+||  GroupId             |  sg-0ae65e1e8f9697e4a                                                              ||
+||  GroupOwnerId        |  709024702237                                                                      ||
+||  IpProtocol          |  tcp                                                                               ||
+||  IsEgress            |  False                                                                             ||
+||  SecurityGroupRuleArn|  arn:aws:ec2:eu-central-1:709024702237:security-group-rule/sgr-06292a071aff7a886   ||
+||  SecurityGroupRuleId |  sgr-06292a071aff7a886                                                             ||
+||  ToPort              |  22                                                                                ||
+|+----------------------+------------------------------------------------------------------------------------+|
+```
+
+### Pour Windows
+
+Dans le CLI :
+```
+aws ec2 authorize-security-group-ingress \
+    --group-id sg-0ae65e1e8f9697e4a \
+    --ip-permissions "IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges=[{CidrIp=10.0.0.0/28,Description=SSH-FROM-DMZ}]" \
+    --region eu-central-1 \
+    --profile DEVOPSTEAM05\
+    --output table
+```
