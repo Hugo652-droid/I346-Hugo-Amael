@@ -337,7 +337,9 @@ Créer depuis le CLI:
 ```
 aws ec2 delete-route\
  --route-table-id rtb-22574640\
- --destination-cidr-block 0.0.0.0/0
+ --destination-cidr-block 0.0.0.0/0\
+ --region eu-central-1\
+ --profile DEVOPSTEAM05
 ```
 
 Output depuis le CLI
