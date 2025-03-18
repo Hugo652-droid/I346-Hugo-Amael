@@ -518,7 +518,7 @@ Output :
 Créer depuis le CLI (WIN)
 ```
 aws ec2 run-instances \
-    --image-id ami-0584590e5f0e97daa \
+    --image-id ami-045114d716addc65d \
     --instance-type t3.micro \
     --key-name KEY-I346-SUB-DEVOPSTEAM05 \
     --subnet-id subnet-092ced6aa04603165 \
