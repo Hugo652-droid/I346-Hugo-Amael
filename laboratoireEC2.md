@@ -965,3 +965,30 @@ Output :
 ||  ToPort              |  3389                                                                              ||
 |+----------------------+------------------------------------------------------------------------------------+|
 ```
+
+## Connection aux instances
+
+### se connecter à la DMZ
+
+depuis le CLI
+
+```
+ ssh devopsteam05@52.59.181.213 -i KEY-I346-DMZ-DEVOPSTEAM05.pem
+```
+
+output (demande si l'on veut s'y connecter que à la première connection, logout à l'aide du mot clé "exit")
+```
+Linux ip-10-0-0-10 6.1.0-31-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Mar 19 11:28:14 2025 from 193.5.240.9
+devopsteam05@ip-10-0-0-10:~$ exit
+logout
+Connection to 52.59.181.213 closed.
+
+```
