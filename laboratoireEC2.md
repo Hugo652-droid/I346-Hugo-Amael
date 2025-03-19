@@ -992,3 +992,76 @@ logout
 Connection to 52.59.181.213 closed.
 
 ```
+
+### Création des tounels
+
+depuis le CLI
+
+```
+ssh devopsteam05@52.59.181.213 \
+    -i KEY-I346-DMZ-DEVOPSTEAM05.pem \
+    -L 23:10.0.5.10:22 \
+    -L 3399:10.0.5.11:3389
+```
+
+output (demande si l'on veut s'y connecter que à la première connection, logout à l'aide du mot clé "exit")
+```
+Linux ip-10-0-0-10 6.1.0-31-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Mar 19 11:30:52 2025 from 193.5.240.9
+devopsteam05@ip-10-0-0-10:~$ ssh admin@localhost   -p 23   -i KEY-I346-SUB-DEVOPSTEAM05.pem
+Warning: Identity file KEY-I346-SUB-DEVOPSTEAM05.pem not accessible: No such file or directory.
+ssh: connect to host localhost port 23: Connection refused
+devopsteam05@ip-10-0-0-10:~$
+```
+
+### se connecter à la machine linux
+
+depuis le CLI
+
+```
+ssh admin@localhost\
+   -p 23\
+   -i KEY-I346-SUB-DEVOPSTEAM05.pem
+```
+
+output (demande si l'on veut s'y connecter que à la première connection, logout à l'aide du mot clé "exit")
+```
+Linux ip-10-0-5-10 6.1.0-23-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.99-1 (2024-07-15) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+admin@ip-10-0-5-10:~$
+```
+
+### Test de connection à google
+
+depuis le CLI
+
+```
+ping 8.8.8.8
+```
+
+output (demande si l'on veut s'y connecter que à la première connection, logout à l'aide du mot clé "exit")
+```
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=57 time=2.40 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=57 time=2.28 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=57 time=1.77 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=57 time=2.05 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=57 time=1.85 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=57 time=1.68 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=57 time=1.43 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=57 time=2.97 ms
+```
+
