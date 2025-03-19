@@ -135,12 +135,14 @@ Output:
 
 ### Supprimer un subnet
 
+- [Documentation AWS - Supprimer un subnet](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-subnet.html)
+
 Dans le CLI:
 ```
 aws ec2 delete-subnet --subnet-id subnet-092ced6aa04603165
 ```
 
-
+Nous n'avons pas pu faire cette action car nous n'avons pas peu faire la commande
 
 ## Gestion de la table de routage
 
@@ -758,7 +760,7 @@ Output depuis le CLI
     "KeyPairId": "key-010ea06f85485f342",
     "KeyName": "cli-lin-subnet05",
     "KeyFingerprint": "b0:96:25:91:77:25:f7:7d:62:45:a8:5b:d9:c7:7b:fb:d6:19:74:2d",
-    "KeyMaterial": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpQIBAAKCAQEAucoYFIeXmbSJNtB+Vd56FRIUmfzQnBVsTbWQRkFcH7EDm2K9\nWr7kfbe/2Ou6wbnKuDYc25hEc6xC+5Cd0FiJlDZQtuWfWCqYxvECixKOdnFrsajF\n6alpcvGe07Dy+J/xLwXKbgo8J/4YFi87nwI6K9xBu0oeMAV6fDEXvZsQMcgFrksZ\nL8itFaAStavDnd0Vy3oMXLH+VWt+NBxPpuya6z7SHsuuT9RXwvoO3gBSUEJ97ia+\n3ytpV0NhPyNowXMgDK/FaCwH6D2FtEYKUk6Wftx4itqEYhfHQZgJ9kkzpNdI/NOM\nqjRimEAyPG3SOa+ZQ0TTAOZG358NhJpnjzh4JwIDAQABAoIBAQCkrN2FLN4RzjSl\nEk44fFbHYFxEVRLulgqGIn172Cj4qiShUPa3fWX3jKwOcHr7hVuKxeP0PFXIFZLV\necx3xFJFvZLzWjpPoooCI9N2Q39kuomTUh4CSzf9Ou7lgf0KpHHZlQ9lU8sYQ59D\n4p+9A/Ndtv/IKxzwwZpchAMf+1ZyV+4hcvHXwwjn0Mmxxwo2Yhnt0qkjHeYnmeiN\nrKEXUwiBYejB2qgw3JEVztLP6tDJxXltcZYoBJ+l2ra5Di3eRo0ALjp3Oy+7haLE\nQf1Bc+iDC8w9WlJF0evO0moRc50YmB+xSxqTrnrchTAWYn8jnqjiLw3HMNvnDYik\n3uIzxjgBAoGBAOowPnv+V9CL+3VLFWBDxuNndntSQlf3d6iyEbTEJuAE5gnboC7s\ngKInVSuE6eeSlF3no+Dz5db8Rte9Ybzf7s+asaLe+8mNOIFHl3pBc2+Q4CFaCUyT\ni+f+o5hskNkZZnbhb+7D/VvV2vtkaDDMQJpMKW0Aw+deTVfzxACn6KwnAoGBAMsX\n3zdHBctMS0p8nQZupOUmJBqVzczsAif7pNEec6wC0Z0WdpI4qwItsYiU+fHGMGIA\n4iPLU3/YAge4iC142RhxIeCisqgV/ZuYUAQ3MS1uIckuqgYFHQYSLCYbmmIq/etb\ngOXOKmA2mGdT1J4gR9QV5jOLGS35lKmFAti3dVQBAoGBAJA/HQ2ksRQ8VKt/jvAX\nbzb8sGbvWPvz6plW7T8JnuRXQBYMWFLuy6CVV4mRub0wdQCOQEu8DvLnuv8BoGUF\nDYSERSwL6szPlmFS5oOgMukiNFt2qMmpDADewIePP3zpf0p0O0y3HaRmShaUVvTP\nqm8fwFhqo0AsvrkQ5cZ9pfv7AoGBAIq8LvaS5Mlgv9oNUDMRqEEFEgq7JNAEtOBd\nTdSwqbHqZwiZTLxMS718O1ei9S8NBQYdtl1fSxX9GD3v986gTCUfO1Y5rjOWeh0t\nKhQHI+f14MyOvQTJv27jQRdzKb4/wh9h7aaOdHIvOWL0aDzwrkCaCRxSvAuk/8Hh\no/UpNdQBAoGALefH7b2jdxvdFLFdlA3ZbG2pGRyhLzxcDJE+TB1Cdzy/5BgfvX1g\ncK99ahwDMopkr4hSc2nbpzAJIjoncEpzkSnW3dHzgWUKeTmA8rejVBraWLteMvbi\nHzGHwhlJGmM+9aiRr+2RRzubpoHgjCw3gWSHIDROoG/gBtkErYyS3m4=\n-----END RSA PRIVATE KEY-----"
+    "KeyMaterial": "***"
 }
 
 
@@ -967,6 +969,10 @@ Output :
 ```
 
 ## Connection aux instances
+
+- [Documentation du cours](https://github.com/CPNV-CFC-I346-CLOUD/DEVOPSTEAM99-LABO-SOLUTION/blob/main/EC2/accesses.md)
+
+- [Documentation AWS]()
 
 ### se connecter à la DMZ
 
