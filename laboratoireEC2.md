@@ -1065,3 +1065,31 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=8 ttl=57 time=2.97 ms
 ```
 
+### Se connecter à la machine windows
+
+depuis le CLI (obtention du mdp)
+
+```
+$ aws ec2 get-password-data\
+  --instance-id  i-005ef53567c5833dd\
+  --priv-launch-key KEY-I346-SUB-DEVOPSTEAM05.pem\
+  --region eu-central-1\
+  --profile DEVOPSTEAM05
+
+```
+
+output
+```
+{
+    "InstanceId": "i-005ef53567c5833dd",
+    "Timestamp": "2025-03-18T14:52:00+00:00",
+    "PasswordData": "***"
+}
+
+```
+
+connexion (machine: localhost:3399, utilisateur: administrator)
+
+![image](https://github.com/user-attachments/assets/8e392994-0279-4b8f-87f0-ad1dfed209a3)
+
+
