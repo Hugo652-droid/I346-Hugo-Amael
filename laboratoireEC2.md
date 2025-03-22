@@ -664,6 +664,36 @@ Output :
 |||  Message                         |  pending                           |||
 ||+----------------------------------+------------------------------------+||
 ```
+### Démarer une instance
+
+Dans le CLI :
+```
+aws ec2 start-instances \
+  --instance-ids i-005ef53567c5833dd \
+  --profile DEVOPSTEAM05\
+  --region eu-central-1
+```
+
+Output :
+```
+{
+    "StartingInstances": [
+        {
+            "InstanceId": "i-005ef53567c5833dd",
+            "CurrentState": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "PreviousState": {
+                "Code": 80,
+                "Name": "stopped"
+            }
+        }
+    ]
+}
+
+```
+
 
 ### Arrêter une instance
 
@@ -673,7 +703,7 @@ Arrêter depuis le CLI
 
 ```
 aws ec2 stop-instances\
- --instance-ids i-1234567890abcdef0
+ --instance-ids i-005ef53567c5833dd
 ```
 
 Output :
